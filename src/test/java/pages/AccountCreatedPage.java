@@ -9,6 +9,7 @@ public class AccountCreatedPage {
     public AccountCreatedPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
     @FindBy(xpath ="//*[@id='form']/div/div/div/h2/b")
     public WebElement TEXT_AccountCreated;
     @FindBy(xpath = "//a[@data-qa='continue-button']")

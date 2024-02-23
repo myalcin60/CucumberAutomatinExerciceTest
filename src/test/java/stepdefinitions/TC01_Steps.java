@@ -1,25 +1,18 @@
 package stepdefinitions;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
-
-import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class TC_01Steps extends AllPage {
-
+public class TC01_Steps {
     HomePage hm = new HomePage();
     LoginSingupPage ls = new LoginSingupPage();
     EnterInformationPage ip = new EnterInformationPage();
@@ -31,6 +24,7 @@ public class TC_01Steps extends AllPage {
 
     @Then("Verify that home page is visible successfully")
     public void verify_that_home_page_is_visible_successfully() {
+
         assertTrue(hm.LOGO_HomePage.isDisplayed());
     }
 

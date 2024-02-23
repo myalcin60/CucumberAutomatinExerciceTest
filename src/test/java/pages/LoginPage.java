@@ -15,4 +15,7 @@ public class LoginPage {
     public WebElement TEXT_AccountDeleted;
     @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[5]/a/i")
     public WebElement BTN_DeleteAccount;
+
+    @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[4]/a")
+    public WebElement BTN_logout;
 }
