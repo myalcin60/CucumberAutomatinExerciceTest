@@ -16,6 +16,11 @@ public class  HomePage {
     @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[8]/a")
     public WebElement BTN_ContactUs;
 
+  @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[5]/a")
+    public WebElement BTN_TestCase;
+ @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a")
+    public WebElement BTN_Products;
+
 
 
 }

@@ -19,7 +19,7 @@ public class ContactUsPage {
     public WebElement subject;
    @FindBy(xpath ="//*[@id='contact-us-form']/div[5]/input")
     public WebElement BTN_updateFile;
-   @FindBy(xpath ="//*[@id='contact-us-form']/div[6]/input")
+   @FindBy(xpath ="//input[@type='submit']")
     public WebElement BTN_submit;
     @FindBy(xpath ="//div[@class='status alert alert-success']")
     public WebElement TEXT_messageSuccess;

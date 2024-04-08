@@ -2,8 +2,11 @@ package stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.ContactUsPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -14,52 +17,65 @@ import utilities.Driver;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TC06_Steps {
+
     HomePage hm = new HomePage();
     ContactUsPage contactUs = new ContactUsPage();
     Actions actions = new Actions(Driver.getDriver());
-     @Given("Click on Contact Us button")
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+
+    @Given("Click on Contact Us button")
     public void click_on_contact_us_button() {
-         hm.BTN_ContactUs.click();
+        hm.BTN_ContactUs.click();
 
     }
 
     @Given("Verify GET IN TOUCH is visible")
     public void verify_get_ın_touch_is_visible() {
-        String expectedText ="GET IN TOUCH";
-        assertEquals(expectedText,contactUs.TEXT_getInTouch.getText());
+        String expectedText = "GET IN TOUCH";
+        assertEquals(expectedText, contactUs.TEXT_getInTouch.getText());
     }
 
     @Given("Enter name, email, subject and message")
     public void enter_name_email_subject_and_message() {
-         contactUs.name.sendKeys(ConfigReader.getProperty("name"));
-         contactUs.email.sendKeys(ConfigReader.getProperty("email"));
-         contactUs.subject.sendKeys("AutomationTest");
+
+        contactUs.name.sendKeys(ConfigReader.getProperty("name"));
+        contactUs.email.sendKeys(ConfigReader.getProperty("email"));
+        contactUs.subject.sendKeys("AutomationTest");
 
     }
 
     @Given("Upload file")
-    public void upload_file()  {
-        String path = System.getProperty("user.home")+"/Desktop/Flower.bmp";
+    public void upload_file() {
+        actions.sendKeys(Keys.PAGE_DOWN)
+                .pause(100).perform();
+
+        String path = System.getProperty("user.home") + "/Desktop/Flower.bmp";
         contactUs.BTN_updateFile.sendKeys(path);
-        actions.sendKeys(Keys.PAGE_DOWN);
 
     }
 
     @Given("ClickSubmit button")
     public void click_submit_button() {
+        wait.until(ExpectedConditions.elementToBeClickable(contactUs.BTN_submit));
+        actions.sendKeys(contactUs.BTN_submit)
+                .click()
+                .perform();
 
-         contactUs.BTN_submit.click();
 
     }
 
     @Given("Click OK button")
     public void click_ok_button() {
-        Driver.getDriver().switchTo().alert().accept();
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        String alertText = alert.getText();
+        System.out.println("Alert Mesajı: " + alertText);
+        alert.accept();
 
     }
 
@@ -70,7 +86,7 @@ public class TC06_Steps {
 
     @Given("Click Home button")
     public void click_home_button() {
-         contactUs.BTN_home.click();
+        contactUs.BTN_home.click();
 
     }
 
