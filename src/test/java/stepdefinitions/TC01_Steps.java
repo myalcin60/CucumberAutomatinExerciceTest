@@ -111,6 +111,7 @@ public class TC01_Steps {
 
     @Then("Click Continue button")
     public void click_continue_button() {
+
         acp.BTN_Continue.click();
         Driver.getDriver().navigate().refresh();
         acp.BTN_Continue.click();
