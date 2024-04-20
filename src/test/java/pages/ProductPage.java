@@ -22,4 +22,17 @@ public class ProductPage {
     public WebElement BTN_Close;
     @FindBy(xpath = "/html/body/div/div/div[1]/div[1]/div")
     public WebElement BTN_X;
+
+    @FindBy(id="search_product")
+    public WebElement searchBar;
+
+    @FindBy(id="submit_search")
+    public WebElement BTN_searc;
+
+    @FindBy(xpath="//h2[text()='Searched Products']")
+    public WebElement TEXT_SEARCHEDPRODUCTS;
+
+    @FindBy(xpath = "//p[text()='Cotton Mull Embroidered Dress']")
+    public WebElement urunName;
+
 }

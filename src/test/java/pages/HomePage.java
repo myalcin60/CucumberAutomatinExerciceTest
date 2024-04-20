@@ -21,6 +21,16 @@ public class  HomePage {
  @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a")
     public WebElement BTN_Products;
 
+ @FindBy(xpath = "//h2[text()='Subscription']")
+    public WebElement subscription;
+    @FindBy(id="susbscribe_email")
+    public WebElement subscriptionMail;
+    @FindBy(id="subscribe")
+    public WebElement subscriptionSend;
+    @FindBy(xpath = "")
+    public WebElement subscriptionMessage;
+
+
 
 
 }

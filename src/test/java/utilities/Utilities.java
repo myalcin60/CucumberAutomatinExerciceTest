@@ -57,6 +57,11 @@ public class Utilities {
         JavascriptExecutor jsexecutor = (JavascriptExecutor) driver;
         jsexecutor.executeScript("arguments[0].scrollIntoView();", element);
     }
+
+    public void scrollToBottom() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.getDriver();
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
 }
 
 

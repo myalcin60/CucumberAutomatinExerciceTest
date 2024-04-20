@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.Utilities;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -20,12 +21,15 @@ public class TC01_Steps {
     LoginPage lp = new LoginPage();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
+    Utilities utilities = new Utilities();
+    CookiesPage cooki = new CookiesPage();
 
 
     @Then("Verify that home page is visible successfully")
     public void verify_that_home_page_is_visible_successfully() {
 
         assertTrue(hm.LOGO_HomePage.isDisplayed());
+
     }
 
     @Then("Click on Signup Login button")

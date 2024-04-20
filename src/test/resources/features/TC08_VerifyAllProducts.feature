@@ -1,4 +1,4 @@
-@VerifyAllProducts
+@ProductPage
   Feature: VerifyAllProducts
     Background:
       Given Navigate to url
