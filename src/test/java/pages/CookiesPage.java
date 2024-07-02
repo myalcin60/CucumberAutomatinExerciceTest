@@ -20,4 +20,7 @@ public class CookiesPage {
     @FindBy(xpath = "/html/body/div/div/div[1]/div[1]/div")
     public WebElement BTN_X;
 
+    @FindBy(xpath = "/html/body/div/div[2]/div[1]/div[2]/div[2]/button[1]/p")
+    public WebElement BTN_Accept;
+
 }

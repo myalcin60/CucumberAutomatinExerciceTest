@@ -30,6 +30,10 @@ public class TC01_Steps {
 
         assertTrue(hm.LOGO_HomePage.isDisplayed());
 
+        if (cooki.BTN_Accept.isDisplayed()){
+            cooki.BTN_Accept.click();
+        }
+
     }
 
     @Then("Click on Signup Login button")
