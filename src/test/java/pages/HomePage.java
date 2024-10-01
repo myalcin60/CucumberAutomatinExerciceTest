@@ -7,6 +7,7 @@ import utilities.Driver;
 
 public class  HomePage {
     public HomePage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -19,12 +20,12 @@ public class  HomePage {
     @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[8]/a")
     public WebElement BTN_ContactUs;
 
-  @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[5]/a")
+    @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[5]/a")
     public WebElement BTN_TestCase;
- @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a")
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a")
     public WebElement BTN_Products;
 
- @FindBy(xpath = "//h2[text()='Subscription']")
+    @FindBy(xpath = "//h2[text()='Subscription']")
     public WebElement subscription;
     @FindBy(id="susbscribe_email")
     public WebElement subscriptionMail;
@@ -32,6 +33,9 @@ public class  HomePage {
     public WebElement subscriptionSend;
     @FindBy(xpath = "")
     public WebElement subscriptionMessage;
+
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[3]/a")
+    public WebElement cart;
 
 
 

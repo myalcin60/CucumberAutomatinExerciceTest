@@ -1,4 +1,4 @@
-@SUBSCRIPTION
+@SUBSCRIPTION_HOME @SUBSCRIPTION
   Feature: Verify text SUBSCRIPTION
     Background:
       Given Navigate to url
